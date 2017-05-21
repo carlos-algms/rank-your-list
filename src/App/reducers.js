@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import list from '../list/ListReducer';
+import list from '../List/ListReducer';
 
 export default combineReducers({
   list

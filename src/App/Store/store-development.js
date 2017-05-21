@@ -3,7 +3,7 @@ import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 
 
-import reducers from '../reducers';
+import reducers from '../Reducers';
 
 
 const initialState = {};
@@ -33,7 +33,7 @@ if (devToolsExtension) {
 
 if (module.hot) {
   module.hot.accept('../reducers', () =>
-    store.replaceReducer(require('../reducers')) // eslint-disable-line global-require
+    store.replaceReducer(require('../Reducers')) // eslint-disable-line global-require
   );
 }
 
