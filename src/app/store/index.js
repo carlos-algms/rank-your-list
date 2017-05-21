@@ -2,5 +2,5 @@
 if (process.env.NODE_ENV === 'production') {
   module.exports = require('./store-production.js');
 } else {
-  module.exports = require('./store-production.js');
+  module.exports = require('./store-development.js');
 }
