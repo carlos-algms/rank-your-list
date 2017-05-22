@@ -32,10 +32,10 @@ export default {
         enforce: 'pre',
         test: /\.jsx*$/,
         exclude: /node_modules/,
-        use: [
-          'babel-loader',
-          'eslint-loader',
-        ],
+        loader: 'eslint-loader',
+        options: {
+          configFile: path.resolve('.eslintrc-development.js')
+        }
       },
       {
         test: /\.jsx*$/,
