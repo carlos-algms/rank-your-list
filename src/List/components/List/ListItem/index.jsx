@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import ListItemComponent from './ListItemComponent';
-import { listItemDelete } from '../../../ListActions';
+import { listItemDelete, listItemAdd } from '../../../ListActions';
 
 
 export default connect(null, mapDispatchToProps)(ListItemComponent);
@@ -9,6 +9,11 @@ export default connect(null, mapDispatchToProps)(ListItemComponent);
 
 function mapDispatchToProps(dispatch) {
   return {
-    onDeleteItem: (item) => { dispatch(listItemDelete(item)); }
+    onDeleteItem: (item) => { dispatch(listItemDelete(item)); },
+    handleEnterKey: (event) => {
+      if (event.key === 'Enter') {
+        dispatch(listItemAdd());
+      }
+    }
   };
 }

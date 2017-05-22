@@ -12,7 +12,8 @@ export default class ListItemComponent extends Component {
       id: PropTypes.string.isRequired,
       value: PropTypes.string.isRequired
     }).isRequired,
-    onDeleteItem: PropTypes.func.isRequired
+    onDeleteItem: PropTypes.func.isRequired,
+    handleEnterKey: PropTypes.func.isRequired
   };
 
   componentDidMount() {
@@ -36,7 +37,13 @@ export default class ListItemComponent extends Component {
           </button>
 
           <div className="mdl-textfield mdl-js-textfield flat-textfield">
-            <input className="mdl-textfield__input" type="text" id={item.id} defaultValue={item.value} />
+            <input
+              className="mdl-textfield__input"
+              type="text"
+              id={item.id}
+              defaultValue={item.value}
+              onKeyPress={(e) => { this.props.handleEnterKey(e); }}
+            />
             <label className="mdl-textfield__label" htmlFor={item.id}>Item name...</label>
           </div>
         </div>
